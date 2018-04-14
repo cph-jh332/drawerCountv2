@@ -30,10 +30,10 @@ class PersonMapper implements IPersonMapper
         return $person;
     }
 
-    public function addPerson($name, $storeNumber)
+    public function addPerson(Person $person)
     {
         $stmt = $this->conn->prepare("INSERT INTO persons (name, store) VALUES (?, ?)");
-        $stmt->bind_param("si",$name, $storeNumber);
+        $stmt->bind_param("si",$person->getName(), $person->getStore());
         $stmt->execute();
     }
 }

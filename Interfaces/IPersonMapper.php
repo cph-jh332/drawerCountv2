@@ -9,5 +9,5 @@
 interface IPersonMapper
 {
     public function getPerson($name);
-    public function addPerson($name, $storeNumber);
+    public function addPerson(Person $person);
 }

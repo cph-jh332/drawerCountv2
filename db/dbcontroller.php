@@ -9,6 +9,8 @@ require_once 'PersonMapper.php';
 require_once 'CountMappper.php';
 require_once '../Interfaces/ICountMapper.php';
 require_once '../Interfaces/IPersonMapper.php';
+require_once '../assets/Count.php';
+require_once '../assets/Person.php';
 class dbcontroller implements ICountMapper, IPersonMapper
 {
     private $personMapper, $countMapper;
@@ -23,8 +25,8 @@ class dbcontroller implements ICountMapper, IPersonMapper
         return $this->personMapper->getPerson($name);
     }
 
-    public function addPerson($name, $storeNumber){
-        $this->personMapper->addPerson($name, $storeNumber);
+    public function addPerson(Person $person){
+        $this->personMapper->addPerson($person);
     }
 
 
@@ -38,13 +40,14 @@ class dbcontroller implements ICountMapper, IPersonMapper
         // TODO: Implement getCount() method.
     }
 
-    public function addCount($drawer1, $drawer2, $total, $diff)
+    public function addCount(Count $count)
     {
-        // TODO: Implement addCount() method.
+        $this->countMapper->addCount($count);
     }
 }
 
 $dbcontroller = new dbcontroller();
 //$dbcontroller->addPerson("test", 428);
 //echo $dbcontroller->getPerson("test")->getName();
-echo $dbcontroller->getCounts()[1]->getDrawer1();
+$dbcontroller->addCount(new Count(0, 2500, 2500, 0,0,1));
+echo $dbcontroller->getCounts()[0]->getDrawer1();
