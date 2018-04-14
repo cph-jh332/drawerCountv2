@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 /**
  * Created by PhpStorm.
  * User: craci
@@ -11,6 +13,7 @@ require_once '../Interfaces/ICountMapper.php';
 require_once '../Interfaces/IPersonMapper.php';
 require_once '../assets/Count.php';
 require_once '../assets/Person.php';
+
 class dbcontroller implements ICountMapper, IPersonMapper
 {
     private $personMapper, $countMapper;
@@ -45,9 +48,3 @@ class dbcontroller implements ICountMapper, IPersonMapper
         $this->countMapper->addCount($count);
     }
 }
-
-$dbcontroller = new dbcontroller();
-//$dbcontroller->addPerson("test", 428);
-//echo $dbcontroller->getPerson("test")->getName();
-$dbcontroller->addCount(new Count(0, 2500, 2500, 0,0,1));
-echo $dbcontroller->getCounts()[0]->getDrawer1();
