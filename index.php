@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joachim
- * Date: 4/14/18
- * Time: 5:16 PM
- */
 session_start();
 if($_SESSION['user'] === null){
     header("location: login.php");
@@ -23,6 +17,10 @@ if($_SESSION['user'] === null){
 <h1>Choose your destiny!</h1>
 <form action="newcount.php">
     <input type="submit" value="New Count">
+</form>
+<form action="./frontControllers/countController.php">
+    <input type="hidden" name="action" value="viewCounts">
+    <input type="submit" value="View Counts">
 </form>
 <form action="register.php">
     <input type="submit" value="Register New User">

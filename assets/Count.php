@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 13-04-2018
- * Time: 22:02
- */
 
 class Count
 {

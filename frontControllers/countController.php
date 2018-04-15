@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joachim
- * Date: 4/14/18
- * Time: 4:15 PM
- */
 require_once '../assets/CashDrawer.php';
 require_once '../assets/Person.php';
 require_once '../db/dbcontroller.php';
@@ -20,6 +14,11 @@ switch ($_GET['action']) {
     case 'submitCount':
         {
             submitCount();
+            break;
+        }
+    case 'viewCounts':
+        {
+            viewCounts();
             break;
         }
     default:
@@ -49,7 +48,8 @@ function addCashDrawer()
     exit();
 }
 
-function submitCount(){
+function submitCount()
+{
     $dbcontroller = new dbcontroller();
     $dbcontroller->addCount(new Count(0, 2500, 2500, $_SESSION['deposit'], $_SESSION['diff'], $_SESSION['user']->getId()));
     unset($_SESSION['drawer1']);
@@ -57,5 +57,15 @@ function submitCount(){
     unset($_SESSION['deposit']);
     unset($_SESSION['diff']);
     header("location: ../index.php");
+    exit();
+}
+
+function viewCounts()
+{
+    $dbcontroller = new dbcontroller();
+    $counts = $dbcontroller->getCounts();
+    //reversing the array to get the latest first
+    $_SESSION['counts'] = array_reverse($counts);
+    header("location: ../viewcounts.php");
     exit();
 }

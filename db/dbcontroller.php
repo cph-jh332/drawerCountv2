@@ -1,12 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 13-04-2018
- * Time: 21:23
- */
 require_once 'PersonMapper.php';
 require_once 'CountMappper.php';
 require_once '../Interfaces/ICountMapper.php';

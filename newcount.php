@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 15-04-2018
- * Time: 13:57
- */
 session_start();
 if ($_SESSION['user'] === null) {
     header("location: login.php");

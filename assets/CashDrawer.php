@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joachim
- * Date: 4/14/18
- * Time: 10:29 AM
- */
 
 class CashDrawer
 {

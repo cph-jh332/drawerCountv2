@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 15-04-2018
- * Time: 14:09
- */
 session_start();
 require_once '../backend/Register.php';
 $register = new Register();

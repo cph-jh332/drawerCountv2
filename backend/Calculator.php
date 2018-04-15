@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: joachim
- * Date: 4/14/18
- * Time: 10:27 AM
- */
 require_once '../assets/CashDrawer.php';
 
 class Calculator

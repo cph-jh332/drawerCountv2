@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 13-04-2018
- * Time: 22:10
- */
 require_once '../Interfaces/ICountMapper.php';
 require_once 'dbconnect.php';
 require_once '../assets/Count.php';

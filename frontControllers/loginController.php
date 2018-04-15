@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 15-04-2018
- * Time: 13:20
- */
-
 session_start();
 require_once '../backend/Login.php';
 $login = new Login();

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 15-04-2018
- * Time: 13:21
- */
 require_once '../assets/Person.php';
 require_once '../db/dbcontroller.php';
 

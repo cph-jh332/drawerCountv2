@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: craci
- * Date: 13-04-2018
- * Time: 21:11
- */
 require_once 'dbconnect.php';
 require_once '../Interfaces/IPersonMapper.php';
 require_once '../assets/Person.php';
