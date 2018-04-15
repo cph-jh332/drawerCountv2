@@ -20,6 +20,7 @@ if($_SESSION['user'] === null){
     <title>Index</title>
 </head>
 <body>
+<h1>Choose your destiny!</h1>
 <form action="newcount.php">
     <input type="submit" value="New Count">
 </form>
