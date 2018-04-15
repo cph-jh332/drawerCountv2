@@ -5,8 +5,8 @@ class DBConnect{
 
      public function open_connection(){
         //Read configs from file
-        $connectionConf = fopen("connection.json", "r") or die("Unable to locate connection.json");
-        $connectionConf = json_decode(fread($connectionConf, filesize("connection.json")));
+        $connectionConf = fopen("../db/connection.json", "r") or die("Unable to locate connection.json");
+        $connectionConf = json_decode(fread($connectionConf, filesize("../db/connection.json")));
         $conn = new mysqli($connectionConf->servername, $connectionConf->username, $connectionConf->password, $connectionConf->dbname);
 
         // Check connection

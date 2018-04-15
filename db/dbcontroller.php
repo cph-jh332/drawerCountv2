@@ -28,8 +28,8 @@ class dbcontroller implements ICountMapper, IPersonMapper
         return $this->personMapper->getPerson($name);
     }
 
-    public function addPerson(Person $person){
-        $this->personMapper->addPerson($person);
+    public function addPerson(Person $person, $password){
+        return $this->personMapper->addPerson($person, $password);
     }
 
 

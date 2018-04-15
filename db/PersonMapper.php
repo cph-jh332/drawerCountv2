@@ -24,16 +24,21 @@ class PersonMapper implements IPersonMapper
         $stmt = $this->conn->prepare("SELECT * FROM persons where name = (?)");
         $stmt->bind_param('s',$name);
         $stmt->execute();
-        $stmt->bind_result($id, $name, $store);
+        $stmt->bind_result($id, $name, $store, $password);
         $stmt->fetch();
         $person = new person($id, $name, $store);
-        return $person;
+        return ['user' => $person, 'password' => $password];
     }
 
-    public function addPerson(Person $person)
+    public function addPerson(Person $person, $password)
     {
-        $stmt = $this->conn->prepare("INSERT INTO persons (name, store) VALUES (?, ?)");
-        $stmt->bind_param("si",$person->getName(), $person->getStore());
-        $stmt->execute();
+        try{
+            $stmt = $this->conn->prepare("INSERT INTO persons (name, store, password) VALUES (?, ?, ?)");
+            $stmt->bind_param("sis",$person->getName(), $person->getStore(), $password);
+            $stmt->execute();
+            return true;
+        }catch (mysqli_sql_exception $exception){
+            return false;
+        }
     }
 }

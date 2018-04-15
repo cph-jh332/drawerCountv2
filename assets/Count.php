@@ -8,15 +8,15 @@
 
 class Count
 {
-    private $id, $drawer1, $drawer2, $total, $diff, $counterId;
+    private $id, $drawer1, $drawer2, $totalDeposit, $diff, $counterId;
 
 
-    public function __construct($id, $drawer1, $drawer2, $total, $diff, $counterId)
+    public function __construct($id, $drawer1, $drawer2, $totalDeposit, $diff, $counterId)
     {
         $this->id = $id;
         $this->drawer1 = $drawer1;
         $this->drawer2 = $drawer2;
-        $this->total = $total;
+        $this->totalDeposit = $totalDeposit;
         $this->diff = $diff;
         $this->counterId = $counterId;
     }
@@ -40,9 +40,9 @@ class Count
     /**
      * @return mixed
      */
-    public function getTotal()
+    public function getTotalDeposit()
     {
-        return $this->total;
+        return $this->totalDeposit;
     }
 
     /**

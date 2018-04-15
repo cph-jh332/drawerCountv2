@@ -40,7 +40,7 @@ class CountMappper implements ICountMapper
         $stmt = $this->conn->prepare("INSERT INTO counts (drawer1, drawer2, total, diff, counterId) VALUES (?,?,?,?,?)");
         $drawer1 = $count->getDrawer1();
         $drawer2 = $count->getDrawer2();
-        $total = $count->getTotal();
+        $total = $count->getTotalDeposit();
         $diff = $count->getDiff();
         $counterId = $count->getCounterId();
         $stmt->bind_param("iiiii",$drawer1,$drawer2, $total, $diff, $counterId);

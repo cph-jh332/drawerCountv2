@@ -9,14 +9,16 @@ require_once '../assets/CashDrawer.php';
 
 class Calculator
 {
-    public function calculateDiff(CashDrawer $cashDrawer, $toDeposit, $leftInDrawer){
+    public function calculateDiff(CashDrawer $cashDrawer, $toDeposit, $leftInDrawer)
+    {
         $total = $this->calculateTotal($cashDrawer);
         $total -= $leftInDrawer;
         $diff = $total - $toDeposit;
         return $diff;
     }
 
-    public function calculateTotal(CashDrawer $cashDrawer){
+    public function calculateTotal(CashDrawer $cashDrawer)
+    {
         $cash = $cashDrawer->getCash();
         $total = 0;
         $total += $cash['0.5'] * 0.5;
@@ -29,6 +31,13 @@ class Calculator
         $total += $cash['100'] * 100;
         $total += $cash['500'] * 500;
         $total += $cash['1000'] * 1000;
+        return $total;
+    }
+
+    public function calculateDeposit($toRemain, CashDrawer $drawer)
+    {
+        $total = $this->calculateTotal($drawer);
+        $total -= $toRemain;
         return $total;
     }
 }
