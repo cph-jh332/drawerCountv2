@@ -31,6 +31,7 @@ class Calculator
         $total += $cash['100'] * 100;
         $total += $cash['500'] * 500;
         $total += $cash['1000'] * 1000;
+        $total += $cash['extra'];
         return $total;
     }
 
