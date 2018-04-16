@@ -16,17 +16,6 @@ class DBConnect{
         mysqli_set_charset($conn,"utf8");
         return $conn;
     }
-
-    public function getQuery($sql){
-        $conn = $this->open_connection();
-        $result = $conn->query($sql);
-        return $result;
-    }
-
-    public function setQuery($sql){
-        $conn = $this->open_connection();
-        $conn->query($sql);
-    }
 }
 
 ?>

@@ -7,23 +7,32 @@ if($_SESSION['user'] === null){
 ?>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php require_once './inc/header.php'?>
     <title>Index</title>
 </head>
 <body>
-<h1>Choose your destiny!</h1>
-<form action="newcount.php">
-    <input type="submit" value="New Count">
-</form>
-<form action="./frontControllers/countController.php">
-    <input type="hidden" name="action" value="viewCounts">
-    <input type="submit" value="View Counts">
-</form>
-<form action="register.php">
-    <input type="submit" value="Register New User">
-</form>
+<div class="grid-x">
+    <div class="cell large-3">&nbsp;</div>
+    <div class="cell large-6">
+        <h1>Choose your destiny!</h1>
+        <div class="grid-x">
+            <div class="cell large-3">&nbsp;</div>
+            <div class="cell large-6">
+                <form action="newcount.php">
+                    <input class="button expanded" type="submit" value="New Count">
+                </form>
+                <form action="./frontControllers/countController.php">
+                    <input type="hidden" name="action" value="viewCounts">
+                    <input class="button expanded" type="submit" value="View Counts">
+                </form>
+                <form action="register.php">
+                    <input class="button expanded" type="submit" value="Register New User">
+                </form>
+            </div>
+            <div class="cell large-3">&nbsp;</div>
+        </div>
+    </div>
+    <div class="cell large-3">&nbsp;</div>
+</div>
 </body>
 </html>

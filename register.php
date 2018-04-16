@@ -7,25 +7,37 @@
 ?>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php require_once './inc/header.php' ?>
     <title>Register</title>
 </head>
 <body>
-    <h1>Register New User</h1>
-    <?php
+<div class="grid-x">
+    <div class="cell large-3">&nbsp;</div>
+    <div class="cell large-6 box">
+        <h1>Register New User</h1>
+        <?php
         if(isset($_GET['error'])){
             echo "<p>{$_GET['error']}</p>";
         }
-    ?>
-    <form action="./frontControllers/registerController.php">
-        <input type="text" name="name" placeholder="Input new users initials">
-        <input type="number" name="store" placeholder="Input store number">
-        <input type="password" name="password1" placeholder="Input password">
-        <input type="password" name="password2" placeholder="Repeat password">
-        <input type="submit">
-    </form>
+        ?>
+        <div class="grid-x">
+            <div class="cell large-3">&nbsp;</div>
+            <div class="cell large-6">
+                <form action="./frontControllers/registerController.php">
+                    <input type="text" name="name" placeholder="Input new users initials">
+                    <input type="number" name="store" placeholder="Input store number">
+                    <input type="password" name="password1" placeholder="Input password">
+                    <input type="password" name="password2" placeholder="Repeat password">
+                    <input type="submit" value="submit" class="button">
+                </form>
+            </div>
+            <div class="cell large-3">&nbsp;</div>
+        </div>
+        <form action="./index.php">
+            <input type="submit" value="back" class="button">
+        </form>
+    </div>
+    <div class="cell large-3">&nbsp;</div>
+</div>
 </body>
 </html>

@@ -1,0 +1,36 @@
+header {
+    text-align: center;
+    background: blue;
+}
+
+header h1 {
+    color: white;
+    margin-bottom: 0;
+}
+
+nav {
+    text-align: center;
+    background: #00BFFF;
+}
+
+nav a {
+    padding: 0px 5px;
+}
+
+div {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 1px solid black;
+    box-shadow: 1px 10px 30px #888888;
+}

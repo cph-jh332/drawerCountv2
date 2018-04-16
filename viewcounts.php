@@ -8,24 +8,30 @@ if($_SESSION['user'] === null){
 ?>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php require_once './inc/header.php' ?>
     <title>View Counts</title>
 </head>
 <body>
-<h1>Counts</h1>
-<?php if(count($_SESSION['counts']) > 0):
-foreach ($_SESSION['counts'] as $count):?>
-<p><strong>Deposit:</strong> <?= $count->getTotalDeposit();?></p>
-<p><strong>Diff:</strong> <?= $count->getDiff(); ?></p>
-<?php endforeach;
-else:?>
-<p>There are no counts yet</p>
-<?php endif;?>
-<form action="index.php">
-    <input type="submit" value="Go Back">
-</form>
+<div class="grid-x">
+    <div class="cell large-4">&nbsp;</div>
+    <div class="cell large-4">
+        <h1>Counts</h1>
+        <p><strong>Latest counts first</strong></p>
+        <?php if(count($_SESSION['counts']) > 0):
+            foreach ($_SESSION['counts'] as $count):?>
+            <div class="box">
+                <p><strong>Deposit:</strong> <?= $count->getTotalDeposit();?></p>
+                <p><strong>Diff:</strong> <?= $count->getDiff(); ?></p>
+            </div>
+            <?php endforeach;
+        else:?>
+            <p>There are no counts yet</p>
+        <?php endif;?>
+        <form action="index.php">
+            <input type="submit" value="Go Back" class="button">
+        </form>
+    </div>
+    <div class="cell large-4">&nbsp;</div>
+</div>
 </body>
 </html>
