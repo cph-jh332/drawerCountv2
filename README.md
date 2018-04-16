@@ -1,4 +1,4 @@
-#How to
+# How to
 1. clone the project
 2. run the sql script in the sql folder
 3. create a file called connection.json in the db folder with the structure:
