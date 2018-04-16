@@ -8,9 +8,12 @@ if($_SESSION['user'] === null){
 ?>
 <html>
 <head>
-    <?php require_once './inc/header.php' ?>
+    <?php require_once './inc/head.php' ?>
     <title>View Counts</title>
 </head>
+<header>
+    <?php require_once './inc/header.php'?>
+</header>
 <body>
 <div class="grid-x">
     <div class="cell large-4">&nbsp;</div>

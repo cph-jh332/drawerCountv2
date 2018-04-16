@@ -3,9 +3,12 @@ session_start();
 ?>
 <html>
 <head>
-    <?php require_once './inc/header.php'?>
+    <?php require_once './inc/head.php' ?>
     <title>Login</title>
 </head>
+<header>
+    <?php require_once './inc/header.php'?>
+</header>
 <body>
 <div class="grid-x">
     <div class="cell large-3">&nbsp;</div>

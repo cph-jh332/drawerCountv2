@@ -8,9 +8,12 @@ if($_SESSION['user'] === null){
 
 <html>
 <head>
-    <?php require_once './inc/header.php'?>
+    <?php require_once './inc/head.php' ?>
     <title>To Deposit</title>
 </head>
+<header>
+    <?php require_once './inc/header.php'?>
+</header>
 <body>
 <div class="grid-x">
     <div class="cell large-3">&nbsp;</div>
