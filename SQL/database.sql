@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `drawerCounts`.`persons` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `store` INT(11) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(165) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 4

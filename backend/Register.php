@@ -13,7 +13,7 @@ class Register
 
     public function register($name, $store, $password){
         $person = new Person(0, $name, $store);
-        if($this->dbcontroller->addPerson($person, sha1($password))){
+        if($this->dbcontroller->addPerson($person, password_hash($password, PASSWORD_BCRYPT))){
             return true;
         }else{
             return false;

@@ -28,7 +28,9 @@ class PersonMapper implements IPersonMapper
     {
         try{
             $stmt = $this->conn->prepare("INSERT INTO persons (name, store, password) VALUES (?, ?, ?)");
-            $stmt->bind_param("sis",$person->getName(), $person->getStore(), $password);
+            $name = $person->getName();
+            $store = $person->getStore();
+            $stmt->bind_param("sis",$name, $store, $password);
             $stmt->execute();
             return true;
         }catch (mysqli_sql_exception $exception){

@@ -10,4 +10,4 @@
       "dbname": "the database name"
     }
 ```
-4. add a user in the person table of the database with a php sha1 encoded password
+4. add a user in the person table of the database with a php password_hash($password, PASSWORD_BCRYPT) encoded password

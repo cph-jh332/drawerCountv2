@@ -13,7 +13,7 @@ class Login
 
     public function login($name, $password){
         $user = $this->dbcontroller->getPerson($name);
-        if(sha1($password) === $user['password']){
+        if(password_verify($password, $user['password'])){
             return $user['user'];
         }else{
             return null;
