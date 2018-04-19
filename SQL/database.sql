@@ -22,7 +22,7 @@ USE `drawerCounts` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `drawerCounts`.`persons` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL UNIQUE,
   `store` INT(11) NOT NULL,
   `password` VARCHAR(165) NOT NULL,
   PRIMARY KEY (`id`))
